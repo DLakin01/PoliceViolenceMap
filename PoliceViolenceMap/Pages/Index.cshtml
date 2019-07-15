@@ -10,14 +10,11 @@
 
 <script>
     function initMap() {
-        var incidents = [];
+        var map = new google.maps.Map(document.getElementById("map"),
+            { zoom: 4, center: new google.maps.LatLng(39.8283, -98.5795) }
+        );
 
-        @foreach (var item in Model.Incidents)
-        {
-
-        }
-
-        var map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: uluru });
-        var marker = new google.maps.Marker({ position: uluru, map: map });
+        var incidents = @Html.Raw(Json.Serialize(Model.Incidents));
+        window.AddMarkersToMap(map, incidents);
     }
 </script>

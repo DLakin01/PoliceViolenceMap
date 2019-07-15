@@ -64,7 +64,7 @@ namespace PoliceViolenceMap.Models
                 entity.HasKey(e => e.IncidentId)
                     .HasName("PK_PoliceKillings_IncidentId");
 
-                entity.Property(e => e.ABriefDescriptionOfTheCircumstancesSurroundingTheDeath).HasColumnName("A brief description of the circumstances surrounding the death");
+                entity.Property(e => e.BriefDescriptionOfCircumstances).HasColumnName("A brief description of the circumstances surrounding the death");
 
                 entity.Property(e => e.AgencyResponsibleForDeath)
                     .HasColumnName("Agency responsible for death")

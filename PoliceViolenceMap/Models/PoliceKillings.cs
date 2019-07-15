@@ -19,7 +19,7 @@ namespace PoliceViolenceMap.Models
         public string County { get; set; }
         public string AgencyResponsibleForDeath { get; set; }
         public string CauseOfDeath { get; set; }
-        public string ABriefDescriptionOfTheCircumstancesSurroundingTheDeath { get; set; }
+        public string BriefDescriptionOfCircumstances { get; set; }
         public string OfficialDispositionOfDeathJustifiedOrOther { get; set; }
         public string CriminalCharges { get; set; }
         public string LinkToNewsArticleOrPhotoOfOfficialDocument { get; set; }

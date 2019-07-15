@@ -19,11 +19,10 @@ namespace PoliceViolenceMap.Pages
         }
 
         public IList<PoliceKillings> Incidents { get; set; }
-        public IList<>
 
         public async Task OnGetAsync()
         {
-            Incidents = await _context.PoliceKillings.ToListAsync();
+            Incidents = await _context.PoliceKillings.Where(c => c.Latitude != null).ToListAsync();
         }
     }
 
