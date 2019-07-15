@@ -10,11 +10,11 @@ using PoliceViolenceMap.Models;
 
 namespace PoliceViolenceMap.Pages
 {
-    public class StateDataModel : PageModel
+    public class DataModel : PageModel
     {
         private readonly PoliceViolenceContext _context;
 
-        public StateDataModel(PoliceViolenceContext context)
+        public DataModel(PoliceViolenceContext context)
         {
             _context = context;
         }
@@ -28,8 +28,6 @@ namespace PoliceViolenceMap.Pages
         {
             StateIncidents = await _context.KillingsByState.ToListAsync();
             AllIncidents = await _context.PoliceKillings.ToListAsync();
-
-            States = StateIncidents.Select(c => new SelectListItem { Value = c.State, Text = c.State }).Distinct().ToList();
         }
 
         public PartialViewResult StateBreakdown(string selectedState)
