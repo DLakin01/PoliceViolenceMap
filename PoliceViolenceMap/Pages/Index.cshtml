@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Mapping Police Violence";
+}
+
+<div class="text-center">
+    <div id="map"></div>
+</div>
+
+<script>
+    function initMap() {
+        var incidents = [];
+
+        @foreach (var item in Model.Incidents)
+        {
+
+        }
+
+        var map = new google.maps.Map(document.getElementById("map"), { zoom: 4, center: uluru });
+        var marker = new google.maps.Marker({ position: uluru, map: map });
+    }
+</script>
